@@ -1,0 +1,81 @@
+﻿X,Y,OBJECTID,NAME,SCHOOL_NAME,SCHOOL_STREET_ADDRESS,SCHOOL_CITY,SCHOOL_STATE,SCHOOL_ZIP_CODE,SCHOOL_COUNTY,PUBLIC_SCHOOL_DISTRICT,BUILDING_CODE,FOR_PROFIT_OR_NON_PROFIT,HEAD_OF_SCHOOL
+-122.358244654338,47.5185604117671,1,Hope Academy ,Hope Academy ,9421 18th Ave SW,Seattle,WA,98106,King ,Seattle Public Schools,,Non-profit,Asia Adam
+-122.307926384761,47.6344224254426,2,Seattle Hebrew Academy,Seattle Hebrew Academy,1617 Interlaken Dr E,Seattle,WA,98112,King,Seattle Public Schools,8057,Non-profit,Rivy Poupko Kletenik
+-122.305956234211,47.6032013451506,3,Seattle Classical Christian School,Seattle Classical Christian School,172 20th Ave,Seattle,WA,98122,King,Seattle Public Schools,,Non-profit,Luke Davis
+-122.327843277321,47.7314306295733,4,Lakeside School (Middle),Lakeside School (Middle),14050 1st Avenue NE,Seattle,WA,98125,King,Seattle Public Schools,,Non-profit,Bernie Noe
+-122.288792877504,47.622907283369,5,The Bush School,The Bush School,3400 E Harrison Street,Seattle,WA,98112,King,Seattle Public Schools,8037,Non-profit,Percy L Abram
+-122.31806523479,47.6942198582917,6,The Perkins School,The Perkins School,9005 Roosevelt Way NE,Seattle,WA,98115,King,Seattle Public Schools,8251,Non-profit,Barry Wright
+-122.320722244752,47.6323875975501,7,Bright Water Waldorf School,Bright Water Waldorf School,1501 10th Ave E,Seattle,WA,98102,King,Seattle Public Schools,1422,Non-profit,Chaya Keefe
+-122.316436914021,47.6413216155307,8,Seattle Preparatory School,Seattle Preparatory School,2400 11th Ave E,Seattle,WA,98102,King,Seattle Public Schools,8059,Non-profit,Erin Luby
+-122.322821659168,47.6195094549889,9,International Montessori Academy - Capitol Hill,International Montessori Academy - Capitol Hill,1715 E Olive Way,Seattle,WA,98102,King County,Seattle Public Schools,,For profit,Brittney Gerry
+-122.369329621921,47.5132016529484,10,Explorer West Middle School,Explorer West Middle School,10015 28th Ave SW,Seattle,WA,98146,King,Highline School District,8189,Non-profit,Barbara Frailey
+-122.26840426815,47.553866730974,11,Torah Academy of the Pacific Northwest,Torah Academy of the Pacific Northwest,5305 52nd Ave S,Seattle,WA,98118,King,Seattle Public Schools,,Non-profit,Daniel Lintz
+-122.39976574313,47.6472466796744,12,Our Lady of Fatima Parish School,Our Lady of Fatima Parish School,3301 West Dravus St,Seattle,WA,98199,King,Seattle Public Schools,8051,Non-profit,Nicholas Ford
+-122.336544496804,47.6171770336312,13,Morningside Academy,Morningside Academy,901 Lenora St,Seattle,WA,98121,King County,Seattle Public Schools,8674,Non-profit,Kent Johnson
+-122.327843277321,47.7314306295733,14,Lakeside School (Upper),Lakeside School (Upper),14050 1st Avenue NE,Seattle,WA,98125,King,Seattle Public Schools,8048,Non-profit,Kelly Simon
+-122.325123366095,47.6808575279681,15,Seattle Jewish Community School,Seattle Jewish Community School,7217 Woodlawn Ave NE,Seattle,WA,98115,King,Seattle Public Schools,8017,Non-profit,Ron Waldman
+-122.375683930792,47.6711986071389,16,St. Alphonsus Parish School,St. Alphonsus Parish School,5816 15th Ave NW,Seattle,WA,98102,King,Seattle Public Schools,8061,Non-profit,Kathleen Daspit
+-122.292954399766,47.6218967328318,17,The Valley School,The Valley School,318 30th Ave E,Seattle,WA,98112,King,Seattle Public Schools,8908,Non-profit,Alan Braun
+-122.313924798268,47.7215454135796,18,St. Matthew School,St. Matthew School,1230 NE 127th St,Seattle,WA,98125,King,Seattle Public Schools,8073,Non-profit,Julie Prepotente
+-122.296912140968,47.5994920180409,19,Seattle Girls' School,Seattle Girls' School,2706 S Jackson St,Seattle,WA,98144,King,Seattle Public Schools,8500,Non-profit,Brenda Leaks
+-122.375636843833,47.5388730567524,20,Our Lady of Guadalupe Catholic School,Our Lady of Guadalupe Catholic School,3401 SW Myrtle St,Seattle,WA,98126,King,Seattle Public Schools,8052,Non-profit,Anton Kramer
+-122.353569192522,47.6648066717845,21,Northwest Montessori School,Northwest Montessori School,4910 Phinney Ave N,Seattle,WA,98103,King,Seattle Public Schools,8894,Non-profit,Jan Thorslund
+-122.316298684627,47.6126593759013,22,Seattle Academy of Arts and Sciences,Seattle Academy of Arts and Sciences,1201 E Union Street,Seattle,WA,98122,King,Seattle Public Schools,8761,Non-profit,Rob Phillips
+-122.320348684825,47.639315821742,23,Bertschi School,Bertschi School,2227 Tenth Avenue E,Seattle,WA,98144,King,Seattle Public Schools,8432,Non-profit,Jessie Kaarbo
+-122.38501808282,47.5654210033875,24,Holy Rosary School - Seattle,Holy Rosary School - Seattle,4142 42nd Ave SW,Seattle,WA,98116,King,Seattle Public Schools,8043,Non-profit,Anna Horton
+-122.321711046302,47.7192256231184,25,Billings Middle School,Billings Middle School,12351 8th Ave NE,Seattle,WA,98125,King,Seattle Public Schools,8530,Non-profit,Anne-Evan Williams
+-122.288002755668,47.6111841946499,26,St. Therese Catholic Academy,St. Therese Catholic Academy,900 35th Ave,Seattle,WA,98122,King,Seattle Public Schools,8076,Non-profit,Matthew D. DeBoer
+-122.320114340064,47.6911205915463,27,St. Catherine of Siena School,St. Catherine of Siena School,8524 8th Ave NE,Seattle,WA,98115,King,Seattle Public Schools,8064,Non-profit,Pam Schwartz
+-122.318178015698,47.6666485930022,28,University Child Development School,University Child Development School,5062 9th Ave NE,Seattle,WA,98105,King,Seattle Public Schools,8838,Non-profit,Paula Smith
+-122.304294229754,47.6264439067581,29,Holy Names Academy,Holy Names Academy,728 21st Ave E,Seattle,WA,98112,King,Seattle Public Schools,8042,Non-profit,Elizabeth A Swift
+-122.305105587579,47.5839108429142,30,Lake Washington Girls Middle School,Lake Washington Girls Middle School,2100 S Walker Street,Seattle,WA,98144,King,Seattle Public Schools,8299,Non-profit,Brenda Stonecipher
+-122.335332405342,47.6168731925929,31,Spruce Street School,Spruce Street School,914 Virginia St,Seattle,WA,98101,King,Seattle Public Schools,8704,Non-profit,Briel Schmitz
+-122.290197016166,47.7211246740417,32,Laurel Academy,Laurel Academy,12700 35th Ave NE,Seattle,WA,98125,King,Seattle Public Schools,,Non-profit,Sharon Bellingham
+-122.352050161976,47.7695188787138,33,King's Schools,King's Schools,19303 Fremont Ave N,Seattle,WA,98133,King,Shoreline School District,8102,Non-profit,Eric Rasmussen
+-122.2597565625,47.5108708886128,34,Seattle Urban Academy,Seattle Urban Academy,10056 Renton Ave S,Seattle,WA,98198,King,Seattle Public Schools,8940,Non-profit,Sharon Okamoto
+-122.2964853451,47.5888550660746,35,Seattle School for Boys,Seattle School for Boys,2800 S Massachusetts St,Seattle,Wa,98144,King,Seattle Public Schools,,Non-profit,Patti Hearn
+-122.27991365403,47.5506331002116,36,Seattle Nativity School,Seattle Nativity School,4200 S Mead St,Seattle,WA,98144,King,Seattle Public Schools,,Non-profit,Edward Nelson
+-122.308276676453,47.6254781836406,37,St. Joseph School,St. Joseph School,700 18th Avenue East,Seattle,WA,98112,King,Seattle Public Schools,8070,Non-profit,Patrick Fennessy
+-122.289355217942,47.6935353739048,38,Our Lady of the Lake Catholic School,Our Lady of the Lake Catholic School,3520 NE 89th Ave,Seattle,WA,98115,King,Seattle Public Schools,8054,Non-profit,Daniel Mullen
+-122.354975453566,47.7090125602819,39,Seattle Area German American School,Seattle Area German American School,11010 Greenwood Ave N,Seattle,WA,98133,King,Seattle Public Schools,,Non-profit,Anjanette U Gonzales
+-122.384742996954,47.6774564413503,40,Matheia School,Matheia School,2205 NW 67th St,Seattle,WA,98117,King,Seattle Public Schools,8165,Non-profit,Allison Soules
+-122.358137693168,47.6311051109521,41,St. Anne School,St. Anne School,101 W Lee St,Seattle,WA,98119,King,Seattle Public Schools,8062,Non-profit,Mary Sherman
+-122.300316177345,47.6822399210532,42,Northwest Montessori School,Northwest Montessori School,7400 25th Ave NE,Seattle,WA,98115,King,Seattle Public Schools,,Non-profit,Jan Thorslund
+-122.324268587733,47.596288764281,43,Puget Sound Community School,Puget Sound Community School,660 S Dearborn St,Seattle,WA,98134,King,Seattle Public Schools,8652,Non-profit,Amy Hollinger
+-122.32156581002,47.7088200859791,44,The Polytech,The Polytech,"540 NE Northgate Way, Suite D",Seattle,WA,98125,King,Seattle Public Schools,,For profit,Reza Khastou
+-122.336108670236,47.6640848014054,45,St. Benedict Catholic School,St. Benedict Catholic School,1805 N 49th St,Seattle,WA,98103,King,Seattle Public Schools,8063,Non-profit,Brian Anderson
+-122.325942328662,47.613391067871,46,The Northwest School,The Northwest School,1415 Summit Avenue,Seattle,WA,98122,King,Seattle Public Schools,8573,Non-profit,Michael McGill
+-122.316411414177,47.555866122392,47,St. George Parish School,St. George Parish School,5117 13th Ave S,Seattle,WA,98108,King,Seattle Public Schools,8067,Non-profit,Monica Wingard
+-122.300132912135,47.6869988403111,48,University Prep,University Prep,8000 25th Ave NE,Seattle,WA,98115,King,Seattle Public Schools,8399,Non-profit,Ronnie Codrington-Cazeau
+-122.305109672793,47.5839122027222,49,Giddens School,Giddens School,2120 21st Ave S,Seattle ,WA,98144,King,Seattle Public Schools,8978,Non-profit,Morva McDonald
+-122.357634550066,47.6863941391941,50,St. John Catholic School,St. John Catholic School,120 N 79th Street,Seattle,WA,98103,King,Seattle Public Schools,8069,Non-profit,Bernadette O'Leary
+-122.324865742281,47.7006297430978,51,Brightmont Academy - Seattle,Brightmont Academy - Seattle,9750 3rd Ave NE Ste 102,Seattle,WA,98115,King,Seattle Public Schools,8384,For profit,Ursula Frank
+-122.286757299779,47.6180672533816,52,Epiphany School,Epiphany School,3611 E Denny Way,Seattle,WA,98122,King,Seattle Public Schools,8033,Non-profit,Jennifer Elkin
+-122.33552591436,47.688910581619,53,Bishop Blanchet High School,Bishop Blanchet High School,8200 Wallingford Ave N,Seattle,WA,98103,King,Seattle Public Schools,8029,Non-profit,Sam Procopio
+-122.285361356298,47.5749865290112,54,The Lake and Park School,The Lake and Park School,3201 Hunter Blvd S,Seattle,WA,98144,King,Seattle Public Schools,,Non-profit,Camille Hayward
+-122.352479082526,47.6647603760834,55,KapKa Cooperative School,KapKa Cooperative School,510 N 49th St,Seattle,WA,98103,King,Seattle Public Schools,1481,Non-profit,Jennifer Mahan
+-122.350899616056,47.6434406865405,56,Seattle Country Day School,Seattle Country Day School,2619 4th Ave N,Seattle,WA,98109,King,Seattle Public Schools,8085,Non-profit,Kimberly Zaidberg
+-122.289047542983,47.6807294668486,57,Concordia Lutheran School,Concordia Lutheran School,7040 36th Ave NE,Seattle,WA,98115,King,Seattle Public Schools,8032,Non-profit,Christine Malone
+-122.387874102423,47.5219044103966,58,Taproot School,Taproot School,9131 California Ave SW,Seattle,WA,98136,King,Seattle Public Schools,,For profit,Michelle Taylor
+-122.37395195208,47.5095926213235,59,Westside School,Westside School,10404 34th Ave SW,Seattle,WA,98146,King,Seattle Public Schools,8916,Non-profit,Steve de Beer
+-122.324813398551,47.6077563521668,60,O'Dea High School,O'Dea High School,802 Terry Avenue,Seattle,WA,98104,King,Seattle Public Schools,8050,Non-profit,James Walker
+-122.38719025203,47.5661485891324,61,Tilden School,Tilden School,4105 California Ave SW,Seattle,WA,98116,King,Seattle Public Schools,1457,Non-profit,Whitney Tjerandsen
+-122.313360345023,47.669654042366,62,University cooperative School,University cooperative School,5601 University Ave NE,Seattle,WA,98105,King,Satsop School District,8428,Non-profit,James Riley
+-122.359463950912,47.5169757054761,63,Holy Family Bilingual Catholic School,Holy Family Bilingual Catholic School,9615 20th Ave SW,Seattle,WA,98106,King,Seattle Public Schools,8041,Non-profit,Larkin Temme
+-122.325288685047,47.6324541777212,64,Fusion Academy,Fusion Academy,214 E Galer St Suite 200,Seattle,WA,98102,King,Seattle Public Schools,,For profit,Stephanie Cole
+-122.268030994471,47.5430985276177,65,Derech Emunah Seattle Jewish Girls High School,Derech Emunah Seattle Jewish Girls High School,5142 S Holly St,Seattle,WA,98118,King,Seattle Public Schools,,Non-profit,Michael Cohel
+-122.312177207126,47.5622445353205,66,Torah Day School of Seattle,Torah Day School of Seattle,1625 S Columbian Way,Seattle,WA,98108,King,Seattle Public Schools,1459,Non-profit,Yona Margolese
+-122.262765630584,47.5104202566607,67,St. Paul School,St. Paul School,10001 57th Avenue S,Seattle,WA,98178,King,Seattle Public Schools,8075,Non-profit,George Hofbauer
+-122.331178474172,47.6641011027029,68,The Meridian School ,The Meridian School ,"4649 Sunnyside Ave N, Suite 242 ",Seattle,WA ,,King,Seattle Public Schools,8404,Non-profit,Meghan Kimpton
+-122.385087863218,47.5634189654078,69,Hope Lutheran Church and School,Hope Lutheran Church and School,4456 42nd Ave SW,Seattle,WA,98116,King,Seattle Public Schools,8045,Non-profit,Kristen Okabayashi
+-122.297329533518,47.7015807543086,70,Seattle Waldorf School,Seattle Waldorf School,2728 NE 100th St,Seattle,WA,98125,King,Seattle Public Schools,8628,Non-profit,Tracy Bennett
+-122.384547326648,47.5650375031865,71,Seattle Lutheran High School,Seattle Lutheran High School,4100 SW Genesee St,Seattle,WA,98116,King,Seattle Public Schools,8455,Non-profit,Dave Meyer
+-122.273409837347,47.6636423217397,72,The Villa Academy,The Villa Academy,5001 NE 50th Street,Seattle,WA,98105,King,Seattle Public Schools,8056,Non-profit,John Milroy
+-122.313683918707,47.6656784213099,73,Academy for Precision Learning,Academy for Precision Learning,5031 University Way NE,Seattle,WA,98105,King,Seattle Public Schools,1483,Non-profit,Kelly Meyer
+-122.353499939836,47.7138744769484,74,Christ the King School,Christ the King School,415 N 117th St,Seattle,WA,98133,King,Seattle Public Schools,8031,Non-profit,Joanne Cecchini
+-122.292838950987,47.6748532393789,75,Assumption / St. Bridget School,Assumption / St. Bridget School,6220 32nd Ave NE,Seattle,WA,98115,King,Seattle Public Schools,8028,Non-profit,Kathleen Conklin
+-122.307695185231,47.6159808142427,76,Seattle Amistad School,Seattle Amistad School,1625 19th Ave,Seattle,WA,98122,King,Seattle Public Schools,,Non-profit,Farin Houk
+-122.339114119695,47.5206557183275,77,OneSchool Global,OneSchool Global,9205 3rd Ave SW,Seattle,WA,98106,King,Seattle Public Schools,,Non-profit,Glen Lutz
+-122.306496232588,47.588305639245,78,Hamlin Robinson School,Hamlin Robinson School,1701 20th Ave S,Seattle,WA,98144,King,Seattle Public Schools,8743,Non-profit,Stacy Turner
+-122.326626116824,47.6999935997544,79,Spring Academy,Spring Academy,9725 3rd Ave NE,Seattle,WA,98115,King,Seattle Public Schools,,For profit,Robert Hauser
+-122.364169226549,47.6602316082683,80,Pacific Crest School,Pacific Crest School,600 NW Bright St,Seattle,WA,98107,King,Seattle Public Schools,8929,Non-profit,Dorothea Knapp Guy
