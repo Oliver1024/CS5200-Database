@@ -27,10 +27,11 @@
             The "select" patterns are XPath expressions.
         -->
         <html><head><title>ReviewApplication</title></head><body>
+        <h1>
+            Restuarants and Recommendations
+        </h1>
         <table border="1">
-            <h1>
-                Restuarants and Recommendations
-            </h1>
+
             <tr>
                 <th>Restaurant</th>
                 <th>Recommendations</th>

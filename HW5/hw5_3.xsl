@@ -27,6 +27,7 @@
             The "select" patterns are XPath expressions.
         -->
         <html><head><title>ReviewApplication</title></head><body>
+        <h1>Company and Restaurants</h1>
         <table border="1">
             <tr>
                 <th>CompanyName</th>
