@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Graph author="liaowen" created="Sun Nov 28 17:25:34 PST 2021" guiVersion="5.12.1.2" id="1638216912793" licenseCode="CLP1DNORTH86232511EX" name="avgIncomeAndHousingPrice" showComponentDetails="true">
+<Global>
+<Metadata id="Metadata1">
+<Record fieldDelimiter="," name="median_salary" previewAttachment="${DATAIN_DIR}/median_salary.csv" previewAttachmentCharset="UTF-8" quoteChar="both" quotedStrings="false" recordDelimiter="\r\n" skipSourceRows="1" type="delimited">
+<Field label="﻿Zip Code" name="Zipcode" type="integer"/>
+<Field label="Populaption" name="Population" type="integer"/>
+<Field eofAsDelimiter="true" label="Avg. Income/H/hold" name="AvgIncomePerHousehold" type="integer"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata3">
+<Record fieldDelimiter=";" name="Neighborhoods" recordDelimiter="\n" type="delimited">
+<Field name="Zipcode" size="11" type="integer"/>
+<Field name="AvgRentalPriceOneBedroom" size="11" type="integer"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata4" previewAttachmentCharset="UTF-8">
+<Record fieldDelimiter="|" name="neighIncomeHousing" previewAttachmentCharset="UTF-8" recordDelimiter="\n" type="delimited">
+<Field name="Zipcode" trim="true" type="integer"/>
+<Field name="AvgRentalPrice" size="11" trim="true" type="integer"/>
+<Field label="Populaption" name="Population" trim="true" type="integer"/>
+<Field eofAsDelimiter="true" label="Avg. Income/H/hold" name="AvgIncomePerHousehold" trim="true" type="integer"/>
+</Record>
+</Metadata>
+<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/SeattlerHub" id="JDBC0" jdbcSpecific="MYSQL" name="HousingPrice" password="088526" type="JDBC" user="root"/>
+<GraphParameters>
+<GraphParameterFile fileURL="workspace.prm"/>
+</GraphParameters>
+<Dictionary/>
+</Global>
+<Phase number="0">
+<Node dbConnection="JDBC0" guiName="DatabaseReader" guiX="85" guiY="106" id="DATABASE_READER" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[SELECT Zipcode, AvgRentalPriceOneBedroom FROM Neighborhoods
+WHERE AvgRentalPriceOneBedroom != 0
+ORDER BY AvgRentalPriceOneBedroom]]></attr>
+</Node>
+<Node guiName="ExtHashJoin" guiX="320" guiY="180" id="EXT_HASH_JOIN" joinKey="$Zipcode=$Zipcode" type="EXT_HASH_JOIN">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.Zipcode = $in.0.Zipcode;
+	$out.0.AvgRentalPrice = $in.0.AvgRentalPriceOneBedroom;
+	$out.0.Population = $in.1.Population;
+	$out.0.AvgIncomePerHousehold = $in.1.AvgIncomePerHousehold;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node existingSheetsActions="REMOVE_SHEETS" fileURL="${DATAOUT_DIR}/IncomeAndHousingPrice.xlsx" guiName="SpreadsheetDataWriter" guiX="525" guiY="180" id="SPREADSHEET_DATA_WRITER" type="SPREADSHEET_WRITER" writeMode="OVERWRITE_SHEET_IN_MEMORY">
+<attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mapping>
+    <globalAttributes>
+        <orientation>VERTICAL</orientation>
+        <step>1</step>
+        <writeHeader>true</writeHeader>
+    </globalAttributes>
+    <defaultSkip>1</defaultSkip>
+    <headerGroups>
+        <headerGroup skip="1">
+            <cloverField>Zipcode</cloverField>
+            <headerRanges>
+                <headerRange begin="A1"/>
+            </headerRanges>
+        </headerGroup>
+        <headerGroup skip="1">
+            <cloverField>AvgRentalPrice</cloverField>
+            <headerRanges>
+                <headerRange begin="B1"/>
+            </headerRanges>
+        </headerGroup>
+        <headerGroup skip="1">
+            <cloverField>AvgIncomePerHousehold</cloverField>
+            <headerRanges>
+                <headerRange begin="C1"/>
+            </headerRanges>
+        </headerGroup>
+        <headerGroup skip="1">
+            <cloverField>Population</cloverField>
+            <headerRanges>
+                <headerRange begin="D1"/>
+            </headerRanges>
+        </headerGroup>
+    </headerGroups>
+</mapping>
+]]></attr>
+</Node>
+<Node fileURL="${DATAIN_DIR}/median_salary.csv" guiName="UniversalDataReader" guiX="65" guiY="217" id="UNIVERSAL_DATA_READER" skipFirstLine="true" trim="true" type="DATA_READER"/>
+<Edge fromNode="DATABASE_READER:0" guiBendpoints="" guiRouter="Manhattan" id="Edge0" inPort="Port 0 (driver)" metadata="Metadata3" outPort="Port 0 (out)" toNode="EXT_HASH_JOIN:0"/>
+<Edge fromNode="EXT_HASH_JOIN:0" guiBendpoints="" guiRouter="Manhattan" id="Edge2" inPort="Port 0 (input)" metadata="Metadata4" outPort="Port 0 (out)" toNode="SPREADSHEET_DATA_WRITER:0"/>
+<Edge fromNode="UNIVERSAL_DATA_READER:0" guiBendpoints="" guiRouter="Manhattan" id="Edge1" inPort="Port 1 (slave)" metadata="Metadata1" outPort="Port 0 (output)" toNode="EXT_HASH_JOIN:1"/>
+</Phase>
+</Graph>

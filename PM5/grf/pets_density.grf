@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Graph author="Zhuocai Li" created="Sun Nov 28 10:50:19 PST 2021" guiVersion="5.12.0.11" id="1638125531196" licenseCode="CLP1DNORTH45038267EX" name="parks_pets" showComponentDetails="true">
+<Global>
+<Metadata id="Metadata8">
+<Record fieldDelimiter="|" name="DensityAndParks" previewAttachmentCharset="UTF-8" recordDelimiter="\r\n" type="delimited">
+<Field name="ZipCode" type="string"/>
+<Field name="Density" type="decimal"/>
+<Field name="ParksCount" type="integer"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata4">
+<Record fieldDelimiter="|" name="Joined1" previewAttachmentCharset="UTF-8" recordDelimiter="\r\n" type="delimited">
+<Field name="ZipCode" type="string"/>
+<Field name="PetsCount" type="integer"/>
+<Field name="ParksCount" type="integer"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata7">
+<Record fieldDelimiter="|" name="Joined2" previewAttachmentCharset="UTF-8" recordDelimiter="\r\n" type="delimited">
+<Field name="ZipCode" type="string"/>
+<Field name="Density" type="decimal"/>
+<Field name="PetsCount" type="integer"/>
+<Field name="ParksCount" type="integer"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata10">
+<Record fieldDelimiter="|" name="Joined3" recordDelimiter="\r\n" type="delimited">
+<Field name="ZipCode" type="string"/>
+<Field name="PetsCount" type="integer"/>
+<Field name="ParksCount" type="integer"/>
+<Field name="Density" type="decimal"/>
+<Field name="RentalPrice" type="integer"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata2">
+<Record fieldDelimiter="," name="Parks" previewAttachment="D:/CS/cs5200/week11/ETL/Parks.csv" previewAttachmentCharset="UTF-8" quoteChar="both" quotedStrings="false" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field label="PMAID" name="PMAID" type="integer"/>
+<Field label="LocID" name="LocID" type="integer"/>
+<Field label="Name" name="Name" type="string"/>
+<Field label="Address" name="Address" type="string"/>
+<Field label="ZIP Code" name="ZIP_Code" type="integer"/>
+<Field label="X Coord" name="X_Coord" type="number"/>
+<Field label="Y Coord" name="Y_Coord" type="number"/>
+<Field eofAsDelimiter="true" label="Location 1" name="Location_1" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata5">
+<Record fieldDelimiter="|" name="ParksAndPets" previewAttachmentCharset="UTF-8" recordDelimiter="\r\n" type="delimited">
+<Field name="ZipCode" type="string"/>
+<Field name="ParksCount" type="integer"/>
+<Field name="PetsCount" type="integer"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata3">
+<Record fieldDelimiter="|" name="ParksCount" previewAttachmentCharset="UTF-8" recordDelimiter="\r\n" type="delimited">
+<Field name="ZipCode" type="string"/>
+<Field name="ParksCount" type="integer"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata0">
+<Record fieldDelimiter="," name="Pets" previewAttachment="D:/CS/cs5200/week11/ETL/Seattle_Pet_Licenses.csv" previewAttachmentCharset="UTF-8" quoteChar="both" quotedStrings="false" recordDelimiter="\r\n" skipSourceRows="0" type="delimited">
+<Field name="Field1" type="string"/>
+<Field name="Field2" type="string"/>
+<Field name="Field3" type="string"/>
+<Field name="Field4" type="string"/>
+<Field eofAsDelimiter="true" name="ZIPCode" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata1">
+<Record fieldDelimiter="|" name="PetsCount" previewAttachmentCharset="UTF-8" recordDelimiter="\r\n" type="delimited">
+<Field name="ZipCode" type="string"/>
+<Field name="PetsCount" type="integer"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata6">
+<Record fieldDelimiter="," name="Population" previewAttachment="D:/CS/cs5200/week11/ETL/population.csv" previewAttachmentCharset="UTF-8" quoteChar="both" quotedStrings="false" recordDelimiter="\r\n" skipSourceRows="1" type="delimited">
+<Field name="Zipcode" type="string"/>
+<Field name="Population" type="integer"/>
+<Field eofAsDelimiter="true" name="Density" scale="2" type="decimal"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata9">
+<Record fieldDelimiter="," name="RentalPrice" previewAttachment="D:/CS/cs5200/week11/ETL/RentalPrice.csv" previewAttachmentCharset="UTF-8" quoteChar="both" quotedStrings="false" recordDelimiter="\r\n" skipSourceRows="1" type="delimited">
+<Field name="zipcode" type="string"/>
+<Field eofAsDelimiter="true" name="AvgRentalPriceOneBedroom" type="integer"/>
+</Record>
+</Metadata>
+<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/BlogApplication" id="JDBC2" jdbcSpecific="MYSQL" name="BlogApplication" password="Lzc_451776740" type="JDBC" user="root"/>
+<GraphParameters>
+<GraphParameterFile fileURL="workspace.prm"/>
+</GraphParameters>
+<Dictionary/>
+</Global>
+<Phase number="0">
+<Node aggregateKey="ZIPCode" equalNULL="true" guiName="Aggregate" guiX="346" guiY="554" id="AGGREGATE" mapping="$ZipCode:=$ZIPCode;$PetsCount:=count();" sorted="false" type="AGGREGATE"/>
+<Node aggregateKey="ZIP_Code" equalNULL="true" guiName="Aggregate" guiX="336" guiY="363" id="AGGREGATE1" mapping="$ZipCode:=$ZIP_Code;$ParksCount:=count();" sorted="false" type="AGGREGATE"/>
+<Node dbConnection="JDBC2" dbTable="seattleparksandpets" fieldMap="$ZipCode:=ZipCode;$ParksCount:=ParksCount;$PetsCount:=PetsCount;$Density:=Density;$RentalPrice:=RentalPrice;" guiName="DatabaseWriter" guiX="1432" guiY="363" id="DATABASE_WRITER" type="DB_OUTPUT_TABLE"/>
+<Node guiName="ExtHashJoin" guiX="553" guiY="446" id="EXT_HASH_JOIN" joinKey="$ZipCode=$ZipCode" type="EXT_HASH_JOIN">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.ParksCount = $in.0.ParksCount;
+	$out.0.PetsCount = $in.1.PetsCount;
+	$out.0.ZipCode = $in.0.ZipCode;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node guiName="ExtHashJoin" guiX="757" guiY="296" id="EXT_HASH_JOIN1" joinKey="$Zipcode=$ZipCode" type="EXT_HASH_JOIN">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.ZipCode = $in.0.Zipcode;
+	$out.0.Density = $in.0.Density;
+	$out.0.PetsCount = $in.1.PetsCount;
+	$out.0.ParksCount = $in.1.ParksCount;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node guiName="ExtHashJoin" guiX="1047" guiY="149" id="EXT_HASH_JOIN2" joinKey="$zipcode=$ZipCode" type="EXT_HASH_JOIN">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.ZipCode = $in.0.zipcode;
+	$out.0.RentalPrice = $in.0.AvgRentalPriceOneBedroom;
+	$out.0.Density = $in.1.Density;
+	$out.0.PetsCount = $in.1.PetsCount;
+	$out.0.ParksCount = $in.1.ParksCount;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node fileURL="D:/CS/cs5200/week11/ETL/Parks.csv" guiName="UniversalDataReader" guiX="43" guiY="363" id="UNIVERSAL_DATA_READER" quoteCharacter="&quot;" quotedStrings="true" skipFirstLine="true" trim="true" type="DATA_READER"/>
+<Node charset="ISO-8859-1" dataPolicy="strict" fileURL="D:/CS/cs5200/week11/ETL/Seattle_Pet_Licenses.csv" guiName="UniversalDataReader" guiX="56" guiY="554" id="UNIVERSAL_DATA_READER1" quoteCharacter="&quot;" quotedStrings="true" skipFirstLine="true" trim="true" type="DATA_READER"/>
+<Node fileURL="D:/CS/cs5200/week11/ETL/population.csv" guiName="UniversalDataReader" guiX="37" guiY="178" id="UNIVERSAL_DATA_READER2" skipFirstLine="true" type="DATA_READER"/>
+<Node dataPolicy="lenient" fileURL="D:/CS/cs5200/week11/ETL/RentalPrice.csv" guiName="UniversalDataReader" guiX="37" guiY="49" id="UNIVERSAL_DATA_READER3" skipFirstLine="true" type="DATA_READER"/>
+<Edge fromNode="AGGREGATE:0" guiBendpoints="" guiRouter="Manhattan" id="Edge19" inPort="Port 1 (slave)" metadata="Metadata1" outPort="Port 0 (out)" toNode="EXT_HASH_JOIN:1"/>
+<Edge fromNode="AGGREGATE1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge18" inPort="Port 0 (driver)" metadata="Metadata3" outPort="Port 0 (out)" toNode="EXT_HASH_JOIN:0"/>
+<Edge fromNode="EXT_HASH_JOIN:0" guiBendpoints="" guiRouter="Manhattan" id="Edge24" inPort="Port 1 (slave)" metadata="Metadata4" outPort="Port 0 (out)" toNode="EXT_HASH_JOIN1:1"/>
+<Edge fromNode="EXT_HASH_JOIN1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge33" inPort="Port 1 (slave)" metadata="Metadata7" outPort="Port 0 (out)" toNode="EXT_HASH_JOIN2:1"/>
+<Edge fromNode="EXT_HASH_JOIN2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge34" inPort="Port 0 (in)" metadata="Metadata10" outPort="Port 0 (out)" toNode="DATABASE_WRITER:0"/>
+<Edge fromNode="UNIVERSAL_DATA_READER:0" guiBendpoints="" guiRouter="Manhattan" id="Edge16" inPort="Port 0 (in)" metadata="Metadata2" outPort="Port 0 (output)" toNode="AGGREGATE1:0"/>
+<Edge fromNode="UNIVERSAL_DATA_READER1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge13" inPort="Port 0 (in)" metadata="Metadata0" outPort="Port 0 (output)" toNode="AGGREGATE:0"/>
+<Edge fromNode="UNIVERSAL_DATA_READER2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge25" inPort="Port 0 (driver)" metadata="Metadata6" outPort="Port 0 (output)" toNode="EXT_HASH_JOIN1:0"/>
+<Edge fromNode="UNIVERSAL_DATA_READER3:0" guiBendpoints="" guiRouter="Manhattan" id="Edge32" inPort="Port 0 (driver)" metadata="Metadata9" outPort="Port 0 (output)" toNode="EXT_HASH_JOIN2:0"/>
+</Phase>
+<Phase number="1">
+<Node dbConnection="JDBC2" enabled="disabled" guiName="DatabaseReader" guiX="236" guiY="654" id="DATABASE_READER" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[SELECT ZipCode, ParksCount, PetsCount FROM SeattleParksAndPets
+GROUP BY ZipCode
+ORDER BY ZipCode]]></attr>
+</Node>
+<Node dbConnection="JDBC2" guiName="DatabaseReader" guiX="236" guiY="903" id="DATABASE_READER3" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[SELECT ZipCode, PetsCount, ParksCount, Density, RentalPrice FROM SeattleParksAndPets
+GROUP BY ZipCode
+ORDER BY ZipCode]]></attr>
+</Node>
+<Node enabled="disabled" existingSheetsActions="REMOVE_SHEETS" fileURL="D:/CS/cs5200/week11/ETL/ParksAndPets.xlsx" guiName="SpreadsheetDataWriter" guiX="811" guiY="593" id="SPREADSHEET_DATA_WRITER" sheet="Sheet1" type="SPREADSHEET_WRITER" writeMode="OVERWRITE_SHEET_IN_MEMORY">
+<attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mapping>
+    <globalAttributes>
+        <orientation>VERTICAL</orientation>
+        <step>1</step>
+        <writeHeader>true</writeHeader>
+    </globalAttributes>
+    <defaultSkip>1</defaultSkip>
+    <headerGroups>
+        <headerGroup skip="1">
+            <cloverField>ZipCode</cloverField>
+            <headerRanges>
+                <headerRange begin="A1"/>
+            </headerRanges>
+        </headerGroup>
+        <headerGroup skip="1">
+            <cloverField>ParksCount</cloverField>
+            <headerRanges>
+                <headerRange begin="B1"/>
+            </headerRanges>
+        </headerGroup>
+        <headerGroup skip="1">
+            <cloverField>PetsCount</cloverField>
+            <headerRanges>
+                <headerRange begin="C1"/>
+            </headerRanges>
+        </headerGroup>
+    </headerGroups>
+</mapping>
+]]></attr>
+</Node>
+<Node existingSheetsActions="REMOVE_SHEETS" fileURL="D:/CS/cs5200/week11/ETL/OverAll.xlsx" guiName="SpreadsheetDataWriter" guiX="811" guiY="896" id="SPREADSHEET_DATA_WRITER2" type="SPREADSHEET_WRITER" writeMode="OVERWRITE_SHEET_IN_MEMORY">
+<attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mapping>
+    <globalAttributes>
+        <orientation>VERTICAL</orientation>
+        <step>1</step>
+        <writeHeader>true</writeHeader>
+    </globalAttributes>
+    <defaultSkip>1</defaultSkip>
+    <headerGroups>
+        <headerGroup skip="1">
+            <cloverField>ZipCode</cloverField>
+            <headerRanges>
+                <headerRange begin="A1"/>
+            </headerRanges>
+        </headerGroup>
+        <headerGroup skip="1">
+            <cloverField>PetsCount</cloverField>
+            <headerRanges>
+                <headerRange begin="B1"/>
+            </headerRanges>
+        </headerGroup>
+        <headerGroup skip="1">
+            <cloverField>ParksCount</cloverField>
+            <headerRanges>
+                <headerRange begin="C1"/>
+            </headerRanges>
+        </headerGroup>
+        <headerGroup skip="1">
+            <cloverField>Density</cloverField>
+            <headerRanges>
+                <headerRange begin="D1"/>
+            </headerRanges>
+        </headerGroup>
+        <headerGroup skip="1">
+            <cloverField>RentalPrice</cloverField>
+            <headerRanges>
+                <headerRange begin="E1"/>
+            </headerRanges>
+        </headerGroup>
+    </headerGroups>
+</mapping>
+]]></attr>
+</Node>
+<Edge fromNode="DATABASE_READER:0" guiBendpoints="" guiRouter="Manhattan" id="Edge21" inPort="Port 0 (input)" metadata="Metadata5" outPort="Port 0 (out)" toNode="SPREADSHEET_DATA_WRITER:0"/>
+<Edge fromNode="DATABASE_READER3:0" guiBendpoints="" guiRouter="Manhattan" id="Edge37" inPort="Port 0 (input)" metadata="Metadata10" outPort="Port 0 (out)" toNode="SPREADSHEET_DATA_WRITER2:0"/>
+</Phase>
+<Phase number="2">
+<Node dbConnection="JDBC2" enabled="disabled" guiName="DatabaseReader" guiX="236" guiY="766" id="DATABASE_READER2" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[SELECT ZipCode, Density, ParksCount FROM SeattleParksAndPets
+GROUP BY ZipCode
+ORDER BY ZipCode]]></attr>
+</Node>
+<Node enabled="disabled" existingSheetsActions="DO_NOTHING" fileURL="D:/CS/cs5200/week11/ETL/DensityAndParks.xlsx" guiName="SpreadsheetDataWriter" guiX="811" guiY="766" id="SPREADSHEET_DATA_WRITER1" sheet="Sheet1" type="SPREADSHEET_WRITER" writeMode="OVERWRITE_SHEET_IN_MEMORY">
+<attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mapping>
+    <globalAttributes>
+        <orientation>VERTICAL</orientation>
+        <step>1</step>
+        <writeHeader>true</writeHeader>
+    </globalAttributes>
+    <defaultSkip>1</defaultSkip>
+    <headerGroups>
+        <headerGroup skip="1">
+            <cloverField>ZipCode</cloverField>
+            <headerRanges>
+                <headerRange begin="A1"/>
+            </headerRanges>
+        </headerGroup>
+        <headerGroup skip="1">
+            <cloverField>Density</cloverField>
+            <headerRanges>
+                <headerRange begin="B1"/>
+            </headerRanges>
+        </headerGroup>
+        <headerGroup skip="1">
+            <cloverField>ParksCount</cloverField>
+            <headerRanges>
+                <headerRange begin="C1"/>
+            </headerRanges>
+        </headerGroup>
+    </headerGroups>
+</mapping>
+]]></attr>
+</Node>
+<Edge fromNode="DATABASE_READER2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge29" inPort="Port 0 (input)" metadata="Metadata8" outPort="Port 0 (out)" toNode="SPREADSHEET_DATA_WRITER1:0"/>
+</Phase>
+</Graph>
