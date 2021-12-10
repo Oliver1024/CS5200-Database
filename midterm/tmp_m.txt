@@ -1,0 +1,89 @@
+3.1 What are the top 10 Plane {Manufacturer, Model} pairs that have the most ServiceHistory records?
+
+SELECT Planes.Manufacturer, Planes.Model 
+FROM Planes
+INNER JOIN ServiceHistory
+ON Planes.PlaneId = ServiceHistory.PlaneId
+ORDER BY ServiceHistory.ServiceDate ASC
+LIMIT 10;
+
+
+
+
+
+
+3.2 What are the top 10 Traveler UserNames that have traveled the most distance after 2015-01-01?
+Notes: Use the Flight ActualDeparture timestamp to determine flights after 2015-01-01, and exclude Canceled flights. To compare timestamps, you can use the following expression: ActualDeparture > “2015-01-01”.
+
+SELECT Travelers.UserName FROM Travelers
+INNER JOIN 
+(SELECT * FROM Flights
+INNER JOIN Reservations
+ON Flights.FlightId = Reservations.FlightID) AS F
+ON Travelers.UserName = F.UserName
+WHERE F.ActualDeparture > “2015-01-01”
+ORDER BY F.Distance DESC
+LIMIT 10;
+
+
+3.3 For each PlaneId, what is the total distance traveled in the month of January this year?
+Notes: Make sure to include all Planes, including Planes that may not have had any flights. Use the ActualDeparture timestamp to determine flight dates, and exclude Canceled flights.
+
+SELECT PlaneId, SUM(IF(JanF.JanDistance is null, 0, JanF.JanDistance)) AS TotalJanDistance
+FROM Planes
+LEFT OUTER JOIN (
+SELECT IF(MONTH(Flights. ActualDeparture) = 1 AND YEAR(Flights. ActualDeparture) = YEAR(CURRENT_DATE()), Flights.distance, 0) AS JanDistance
+FROM Flights
+) As JanF
+ON Flights.PlaneId = Planes.PlaneId
+GROUP BY PlaneId
+
+ 
+3.4 Of all flights, what is the percentage of late (where ActualArrival is greater than ScheduledArrival) or Canceled flights?
+
+SELECT 100.0 * (SUM(IF(Flights.ActualArrival > Flights.ScheduledArrival, 1, 0)) + SUM(IF(Canceled IS NULL, 0, 1))) / COUNT(*) AS LateOrCancelPercent
+FROM Flights
+
+
+
+
+
+
+3.5 What are the top 10 UserNames that have booked the most number of Reservations?
+Note: you can ignore UserNames that have not booked any reservations.
+
+
+SELECT UserName, COUNT(*) AS FlightNum
+FROM Reservations
+GROUP BY UserName
+ORDER BY FlightNum DESC
+LIMIT 10;
+
+
+
+
+
+
+3.6 For each UserName, what is the total amount spent through InFlightPurchases?
+Note: Make sure to include all UserNames, including UserNames that may not have made any InFlightPurchases.
+
+SELECT T.UserName, SUM(T.Amount)
+FROM 
+(SELECT IF(InFlightPurchases.Amount IS NULL, 0, InFlightPurchases.Amount) AS Amount
+FROM Travelers
+LEFT OUTER JOIN InFlightPurchases
+ON Travelers.UserName = InFlightPurchases.UserName) AS T
+GROUP BY T.UserName;
+
+
+ 
+
+3.7 For each UserName, what is the average amount spent through InFlightPurchases per Reservation?
+Notes: While you can ignore UserNames that have not booked any reservations, be sure to include UserNames that may not have made any InFlightPurchases. To calculate the average amount spent per reservation: (UserName’s total InflightPurchases amount) / (UserName’s total number of reservations). This calculation may use concepts from the previous two questions.
+
+SELECT Reservations.UserName, SUM() SUM(IF(InFlightPurchases.Amount IS NULL, 0, InFlightPurchases.Amount))/ COUNT(*) AS PurchasePerRes FROM Reservations
+LEFT OUTER JOIN
+InFlightPurchases
+ON Reservations.UserName = InFlightPurchases.UserName
+GROUP BY Reservations.UserName;
+
